@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'/>
+        <title>Game</title>
+        <link rel='stylesheet' href="{{url_for('static',filename='game.css')}}"/>
+        <script src="{{url_for('static',filename='test.js')}}" type='module'></script>
+
+    </head>
+    <body>
+        <nav>
+            <div class='navbar'>
+            {%if g.user%}  
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('get_hero')}}">Play</a>
+            <a href="{{url_for('scoreboard')}}">scoreboard</a>
+            <div class="dropdown">
+              <button class="dropbtn">{{g.user}}
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{{url_for('logout')}}">Logout</a>
+              </div>
+            </div>
+            {%else%}
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('get_hero')}}">Play</a>
+            <div class="dropdown">
+              <button class="dropbtn">Login
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{{url_for('signIn')}}">Sign in</a>
+                <a href="{{url_for('signUp')}}">Create Account</a>
+              </div>
+            </div>
+            {%endif%}
+            </div>
+            </nav>
+        <main>
+        <canvas width ='512' height='320'> <!--An area where we can draw or paint stuff-->
+        
+        </canvas>
+        <p id='outcome'> </p>
+        
+        <button onclick="restart()">Restart</button>
+        <script>
+            function restart(){
+                location.reload()
+            }
+        </script>
+        <p>
+        <a href="{{url_for('get_hero')}}" class='change'>Change Character</a>
+        <a href="{{url_for('get_level') }}" class='change'>Change Level</a>
+        <span id='health'></span>
+        </p>  
+            
+        
+    </main>
+    </body>
+</html>
