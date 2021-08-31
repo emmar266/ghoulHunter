@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block main_content%}
+    <section>
+        <h1>Instructions</h1>
+        <p>
+            Game is very simple, you have a 'hero' and you have two various types of 
+            enemies, skeletons and cloacked dudes. Move with the arrow keys and any other key board 
+            button will make the hero use his sword.
+        </p>
+        <img src="{{ url_for('static',filename='cool_bros.png')}}" alt='skeleton image' class='home'>
+        <img src="{{ url_for('static',filename='paralysis demon.png') }}" alt='enemy' class='home'>
+        <p>
+            With one swipe you will kill a skeleton but it will take a couple of swipes 
+            to kill the enemy. To advance to the next level you must kill all of the enemies 
+            present and collect the key. Note you don't have to kill all the skeletons. 
+            The number of enemies will increase with each level. If you kill all of the skeletons
+            you will receive a heart which will increase your health
+        </p>
+        <img src="{{ url_for('static',filename='key.png')}}" alt= 'key' class='home'>
+        
+        <img src="{{ url_for('static',filename='increase_health.png')}}" alt='heart' class='home'>
+
+        <p>
+            You can chose between multiple players and you can chose to play at an easy, medium or hard
+            level. The difference between these levels is primarily the damage done by enemies and how 
+            difficult it is to kill the enemies. Obviously it is easier to defeat enemies in the easy level and
+            harder at the hard standards.
+        </p>
+        <p>
+            If you chose to play at the hard level of difficulty there is a type of powerup. A chicken 
+            will float around the screen and if you kill it you'll automatically progress to the next level
+            without having to beat any of the enemies. However the chicken appears at the start of the level and
+            quickly runs off screen. 
+        </p>
+        <p>
+            The bigger the character you chose the slower they will in the game
+        </p>
+        <p>
+            All sprites came from <a href="https://itch.io/game-assets/free/tag-2d">Itch.io</a> and none require credit
+        </p>
+        <p>Music from <a href='https://www.zapsplat.com/'>zapsplat</a></p>
+
+    </section>
+
+
+{%endblock%}

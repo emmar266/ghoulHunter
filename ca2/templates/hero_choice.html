@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block main_content%}
+
+<form action='' method='POST' novalidate>
+    {{form.hidden_tag()}}
+    {{form.hero.label}}
+    {{form.hero()}}
+    {%for error in form.hero.errors%}
+        {{error}}
+    {%endfor%}
+    <br>
+    {{form.submit()}}
+</form>
+<img src="{{ url_for('static',filename='blue.png') }}" alt='Picture of character Blue'/>
+<img src="{{ url_for('static',filename='knight bro.png') }}" alt='Picture of character Knight'/>
+<img src="{{ url_for('static',filename='huntress1.png') }}" alt='Picture of character Huntress'/>
+<p>Please note the huntress is a much bigger character than Blue or knight and will move much slower as a result</p>
+
+
+{%endblock%}

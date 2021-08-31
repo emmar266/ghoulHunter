@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block head%}
+<script src="{{url_for('static',filename='test.js')}}" type='module'></script>
+
+{%endblock%}
+
+{%block main_content%}
+    <form>
+        <label for='playing_level'>Choose a level to play at</label>
+        <select id='playing_level' name='playing_level'>
+            <option value='easy'>Easy</option>
+            <option value='medium'>Medium</option>
+            <option value='hard'>Hard</option>
+        </select>
+        <span id='select_errors'></span>
+        <input type='submit'>
+    </form>
+
+
+{%endblock%}
